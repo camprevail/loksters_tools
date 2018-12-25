@@ -2427,7 +2427,7 @@ class laser_gcode(inkex.Effect):
             gcode += gcode_pass
         f = open(self.options.directory+self.options.file, "w")
         f.write(
-            self.options.laser_off_command + " S0 ; turn the laser off" + "\n" + 
+            self.options.laser_off_command + ; turn the laser off" + "\n" + 
             self.header + 
             "G1 F" + self.options.travel_speed + "\n" + 
             "G1 Z"+self.options.z_offset+" ; move to z offset\n" +
@@ -3207,7 +3207,7 @@ class laser_gcode(inkex.Effect):
             "penetration feed": self.options.laser_speed,
             "feed": self.options.laser_speed,
             "gcode before path": ("G4 P0 \n" + self.options.laser_command + " S" + str(int(self.options.laser_power)) + "\nG4 P" + self.options.power_delay),
-            "gcode after path": ("G4 P0 \n" + self.options.laser_off_command + " S0" + "\n" + "G1 F" + self.options.travel_speed),
+            "gcode after path": ("G4 P0 \n" + self.options.laser_off_command + "\n" + "G1 F" + self.options.travel_speed),
         }
 
         self.get_info()
